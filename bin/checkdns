@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var checkdns = require('../lib/checkdns'),
+    program = require('commander'),
+    path = require('path');
+
+/*
+  Commands
+*/
+
+program
+  .version('0.0.1')
+  .option('-t, --type [type]', 'Specify a type of records [\'A\', \'AAAA\', \'CNAME\', \'MX\', \'TXT\', \'NS\', \'PTR\']', 'A')
+  .option('-f, --file [file]', 'Specify a file that contains a list of domains separate by \'\\n\' or \';\'')
+  .parse(process.argv);
+
+
+
+/*
+  Begin
+*/
+
+var rtype = program.type.toUpperCase();
+
+program.args.forEach(function(el){
+  checkdns.nslookup(el, rtype);
+});
+
+if( program.file ) {
+  var filePath = path.resolve(program.file);
+  checkdns.nslookupFromFile(filePath, rtype);
+}
