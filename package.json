@@ -1,8 +1,30 @@
 {
-	"name": "checkDNS",
-	"version": "0.0.1",
-	"dependencies": {
-	    "cli-color": "latest",
-	    "commander": "latest"
-	}
+  "name": "checkDNS",
+  "version": "0.0.1",
+  "description": "Resolution of domain names or IP addresses given or from a file",
+  "keywords": [
+    "dns",
+    "lookup",
+    "domain",
+    "terminal",
+    "cli",
+    "shell",
+    "nslookup",
+    "resolve"
+  ],
+  "author": {
+    "name": "Florent Detry",
+    "email": "florent@fdetry.be",
+    "url": "http://fdetry.be/"
+  },
+  "main": "lib",
+  "dependencies": {
+    "cli-color": "~0.2.2",
+    "commander": "~1.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Fridus/checkdns.git"
+  },
+  "readmeFilename": "README.md"
 }
