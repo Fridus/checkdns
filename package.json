@@ -1,6 +1,6 @@
 {
-  "name": "checkDNS",
-  "version": "0.0.1",
+  "name": "checkdns",
+  "version": "0.0.2",
   "description": "Resolution of domain names or IP addresses given or from a file",
   "keywords": [
     "dns",
@@ -18,6 +18,9 @@
     "url": "http://fdetry.be/"
   },
   "main": "lib",
+  "bin": {
+    "checkdns": "./bin/checkdns"
+  },
   "dependencies": {
     "cli-color": "~0.2.2",
     "commander": "~1.1.1"
