@@ -1,6 +1,6 @@
 {
   "name": "checkdns",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Resolution of domain names or IP addresses given or from a file",
   "keywords": [
     "dns",
@@ -17,7 +17,7 @@
     "email": "florent@fdetry.be",
     "url": "http://fdetry.be/"
   },
-  "main": "lib",
+  "main": "./lib/checkdns",
   "bin": {
     "checkdns": "./bin/checkdns"
   },
@@ -29,5 +29,9 @@
     "type": "git",
     "url": "git://github.com/Fridus/checkdns.git"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "mocha": "~1.11.0",
+    "should": "~1.2.2"
+  }
 }
