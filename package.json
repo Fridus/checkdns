@@ -21,17 +21,20 @@
   "bin": {
     "checkdns": "./bin/checkdns"
   },
-  "dependencies": {
-    "cli-color": "~0.2.2",
-    "commander": "~1.1.1"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/Fridus/checkdns.git"
   },
   "readmeFilename": "README.md",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "cli-color": "~1.1.0",
+    "commander": "~2.9.0"
+  },
   "devDependencies": {
-    "mocha": "~1.11.0",
-    "should": "~1.2.2"
+    "mocha": "~3.2.0",
+    "should": "~11.2.0"
   }
 }

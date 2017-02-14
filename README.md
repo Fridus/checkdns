@@ -1,11 +1,11 @@
 Checkdns
 ========
 
-node.js - Resolution of domain names or IP addresses given or from a file. 
+node.js - Resolution of domain names or IP addresses given or from a file.
 
 ## Installation
 ```
-$ npm install checkdns
+$ npm install -g checkdns
 ```
 
 ## Use command line
