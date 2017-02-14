@@ -2,25 +2,28 @@
 
 var checkdns = require('../lib/checkdns'),
     program = require('commander'),
-    path = require('path');
+    path = require('path'),
+    pkg = require('../package');
 
 /*
   Commands
 */
 
 program
-  .version('0.0.1')
+  .version(pkg.version)
   .option('-t, --type [type]', 'Specify a type of records [\'A\', \'AAAA\', \'CNAME\', \'MX\', \'TXT\', \'NS\', \'PTR\']', 'A')
   .option('-f, --file [file]', 'Specify a file that contains a list of domains separate by \'\\n\' or \';\'')
   .parse(process.argv);
-
-
 
 /*
   Begin
 */
 
 var rtype = program.type.toUpperCase();
+
+if (!program.args.length) {
+  program.help();
+}
 
 program.args.forEach(function(el){
   checkdns.nslookup(el, rtype);
