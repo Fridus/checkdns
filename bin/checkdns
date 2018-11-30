@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var checkdns = require('../lib/checkdns'),
-    program = require('commander'),
-    path = require('path'),
-    pkg = require('../package');
+const checkdns = require('../lib/checkdns');
+const program = require('commander');
+const path = require('path');
+const pkg = require('../package');
 
 /*
   Commands
@@ -11,6 +11,7 @@ var checkdns = require('../lib/checkdns'),
 
 program
   .version(pkg.version)
+  .usage('[domain or file] [options]')
   .option('-t, --type [type]', 'Specify a type of records [\'A\', \'AAAA\', \'CNAME\', \'MX\', \'TXT\', \'NS\', \'PTR\']', 'A')
   .option('-f, --file [file]', 'Specify a file that contains a list of domains separate by \'\\n\' or \';\'')
   .parse(process.argv);
@@ -19,17 +20,17 @@ program
   Begin
 */
 
-var rtype = program.type.toUpperCase();
+const rtype = program.type.toUpperCase();
 
-if (!program.args.length) {
+if (!program.args.length && !program.file) {
   program.help();
 }
 
-program.args.forEach(function(el){
+program.args.forEach(function (el) {
   checkdns.nslookup(el, rtype);
 });
 
-if( program.file ) {
-  var filePath = path.resolve(program.file);
+if (program.file) {
+  const filePath = path.resolve(program.file);
   checkdns.nslookupFromFile(filePath, rtype);
 }
