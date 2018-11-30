@@ -1,6 +1,6 @@
 {
   "name": "checkdns",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Resolution of domain names or IP addresses given or from a file",
   "keywords": [
     "dns",
