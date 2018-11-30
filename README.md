@@ -1,7 +1,8 @@
 Checkdns
 ========
 
-node.js - Resolution of domain names or IP addresses given or from a file.
+node.js - Resolution of domain names or IP addresses given or from a file.  
+Node v6+
 
 ## Installation
 ```
@@ -21,16 +22,16 @@ checkdns github.com [domain2] [domain3] ...
 checkdns 204.232.175.90 [IP2] [IP3] ...
 ```
 
-With rtype :
+With rtype (type `any` with node v8+):
 ```
-checkdns github.com -t [cname|ns|txt|aaaa|mx|ptr]
+checkdns github.com -t [cname|ns|txt|aaaa|mx|ptr|any]
 ```
 
 Using file:
 You can use a file with a list of domains. There are separate by return line or ';'.
 ```
-checkdns myFile
-checkdns myFile -t ...
+checkdns -f myFile
+checkdns -f myFile -t ...
 ```
 
 ## Usage
