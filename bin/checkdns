@@ -14,6 +14,7 @@ program
   .usage('[domain or file] [options]')
   .option('-t, --type [type]', 'Specify a type of records [\'A\', \'AAAA\', \'CNAME\', \'MX\', \'TXT\', \'NS\', \'PTR\']', 'A')
   .option('-f, --file [file]', 'Specify a file that contains a list of domains separate by \'\\n\' or \';\'')
+  .option('-T, --table', 'Output in table')
   .parse(process.argv);
 
 /*
@@ -27,10 +28,10 @@ if (!program.args.length && !program.file) {
 }
 
 program.args.forEach(function (el) {
-  checkdns.nslookup(el, rtype);
+  checkdns.nslookup(el, rtype, program.table);
 });
 
 if (program.file) {
   const filePath = path.resolve(program.file);
-  checkdns.nslookupFromFile(filePath, rtype);
+  checkdns.nslookupFromFile(filePath, rtype, program.table);
 }
